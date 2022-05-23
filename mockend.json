@@ -1,8 +1,14 @@
 {
-  "events":[
-  { "id": 1, "type": "movie", "description": "this is a movie description"},
-  { "id": 2, "type": "play", "description": "this is a play description"},
-  { "id": 3, "type": "concert", "description": "this is a concert description"},
-  { "id": 4, "type": "other", "description": "this is an other event description"}
-  ]
+  "Post": {
+    "title": { "string": {} },
+    "comments": {
+      "hasMany": "Comment"
+    }
+  },
+  "Comment": {
+    "body": { "string": {} },
+    "post": {
+      "belongsTo": "Post"
+    }
+  }
 }
